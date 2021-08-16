@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShowTrackr</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+    body{
+      background-color: #e4e7ec;
+     }
+
+     .add-page{
+       font-family: arial;
+       color: #333;
+     }
+
+     .add-page form{
+       width: 1200px;
+       margin: 0 auto;
+       padding: 20px 30px 20px;
+       border-radius: 5px;
+       box-sizing: border-box;
+       background-color: #ffffff;
+     }
+     .addshow{
+       margin: -20px -30px 21px;
+       line-height: 40px;
+       padding-left: 15px;
+
+       border-bottom: 1px solid #cfcfcf;
+
+       background-color:#f6f6f6;
+     }
+     .add-page input{
+       width: 100%;
+       border:2px solid #ddd;
+       padding: 5px 10px;
+       height: 45px;
+       margin: 0px 0px 20px;
+       border-radius: 4px;
+       box-sizing: border-box;
+       font-size: 17px;
+     }
+     .add-page button{
+       display: table;
+       font-size: 20px;
+       padding: 10px 30px;
+       background-color: #6ba9f7;
+       border: none;
+       color: #fff;
+       border-radius: 4px;
+       cursor: pointer;
+     }
+
+     .navbar-brand{
+       background-color: #ffe939;
+
+     }
+     nav{
+       box-shadow: 0 2px 2px -2px rgba(0,0,0,.2);
+     }
+
+    </style>
+  </head>
+  <body>
+
+  <nav class="navbar navbar-expand-md navbar-light bg-light">
+  <a class="navbar-brand" href="index.html">Show<b>Trackr</b></a>
+  <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+      <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarCollapse">
+      <div class="navbar-nav">
+          <a href="index.html" class="nav-item nav-link active">Home</a>
+          <a href="addpage.html" class="nav-item nav-link">Add</a>
+      </div>
+      <div class="navbar-nav ml-auto">
+          <a href="login.html" class="nav-item nav-link">Login</a>
+          <a href="signup.html" class="nav-item nav-link">Sign up</a>
+      </div>
+  </div>
+</nav>
+
+<br><br>
+
+    <div class="add-page">
+      <form >
+        <h3 class="addshow">ADD TV SHOW</H3>
+          <h4>Name</h4>
+
+          <input  type="text" name="addpage" placeholder="Enter TV show name" id="Name"></input><br>
+          <p id="print"></p>
+          <button onclick="myFunction(Name.value)"  type="button">Add</button>
+      </form>
+    </div>
+
+
+    <script>
+
+    function myFunction(add) {
+var letters = /^[A-Za-z]+$/;
+if(add[0].match(letters)){
+document.getElementById('print').style.color = 'green';
+document.getElementById('print').innerHTML = add + " has been added";
+console.log(add)
+}
+else {
+document.getElementById('print').style.color = 'red';
+document.getElementById('print').innerHTML = "Invalid TV Show Name";
+}
+}
+
+    </script>
+
+</body>
+
+</html>

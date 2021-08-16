@@ -1,0 +1,9 @@
+email:"shaa@gmail.com",password:"shaa"
+
+email:"hari@gmail.com",password:"hari"
+
+email:"mikki02@gmail.com",password:"mikki"
+
+email:"thenu8@gmail.com",password:"thenu"
+
+email:"dilax23@gmail.com",password:"dilax"

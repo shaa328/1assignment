@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup form</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+
+  <style>
+  body{
+    background-color: #e4e7ec;
+  }
+  .signup-form{
+    font-family: arial;
+    color: #333;
+  }
+  .signup-form form{
+    width: 400px;
+    margin: 0 auto;
+    padding: 20px 30px 20px;
+    border-radius: 5px;
+    box-sizing: border-box;
+    background-color: #ffffff;
+
+  }
+  .signup-form h2{
+    text-align: center;
+    font-size: 35px;
+    margin:10px 0px 40px;
+  }
+
+  .signup-form input{
+    width: 100%;
+    border:2px solid #ddd;
+    padding: 5px 10px;
+    height: 45px;
+    margin: 0px 0px 20px;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 17px;
+
+  }
+  .signup-form button{
+    width: 100%;
+    margin: 10px auto 30px;
+    display: table;
+    font-size: 20px;
+    padding: 10px 30px;
+    background-color: #4CAF50;
+    border: none;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+
+
+  }
+  .signup-form button:hover{
+   opacity: 0.8;
+  }
+  .s-u{
+    text-decoration: none;
+    color: black;
+  }
+  .navbar-brand{
+    background-color: #ffe939;
+
+  }
+  nav{
+    box-shadow: 0 2px 2px -2px rgba(0,0,0,.2);
+  }
+  </style>
+  </head>
+
+  <body>
+
+  <nav class="navbar navbar-expand-md navbar-light bg-light">
+  <a class="navbar-brand" href="index.html">Show<b>Trackr</b></a>
+  <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+      <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarCollapse">
+      <div class="navbar-nav">
+          <a href="index.html" class="nav-item nav-link active">Home</a>
+          <a href="addpage.html" class="nav-item nav-link">Add</a>
+      </div>
+      <div class="navbar-nav ml-auto">
+          <a href="login.html" class="nav-item nav-link">Login</a>
+          <a href="signup.html" class="nav-item nav-link">Sign up</a>
+      </div>
+  </div>
+</nav>
+<br><br>
+
+    <div class="signup-form">
+      <form onsubmit="return verifyPassword()" id="form">
+        <h2>Sign up</h2>
+        <input type="text" placeholder="Name" id="usrname"   ></input><br>
+
+
+
+        <input type="email" placeholder="Email" id="email"></input><br>
+
+        <input type="password" placeholder="Password" id="psw" ></input><br>
+        <span id = "message" style="color:red"> </span> <br>
+
+
+        <p>By clicking on Sign up you agree to <b> terms & conditions</b> and <b> privacy policy</b></p>
+        <button  type="submit" >Sign up</button>
+        <p class="dont" style="opacity:0.5;" >Already have an account?<a class="s-u" href="">Login now</a></p>
+
+      </form>
+    </div>
+
+<script>
+
+    function verifyPassword() {
+      var pw = document.getElementById("psw").value;
+      //check empty password field
+      if(pw == "") {
+         document.getElementById("message").innerHTML = "Fill the password please!";
+         return false;
+      }
+
+     //minimum password length validation
+      if(pw.length < 8) {
+         document.getElementById("message").innerHTML = "Password length must be atleast 8 characters";
+         return false;
+      }
+
+    //maximum length of password validation
+      if(pw.length > 15) {
+         document.getElementById("message").innerHTML = "Password length must not exceed 15 characters";
+         return false;
+      } else {
+         alert("Password is correct");
+      }
+    }
+    </script>
+
+  </body>
+</html>
